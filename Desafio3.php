@@ -9,7 +9,11 @@
 
     // Cálculos
     $float = ($nota1 + $nota2 + $nota3) / $numeroDeNotas;
-    $frequenciaFaltas = (90/$faltas) * 100;
+    if($faltas === 0) {
+        $frequenciaFaltas = 0;
+    } else {
+        $frequenciaFaltas = (90/$faltas) * 100;
+    }
 
     // Função para identificar se foi aprovado ou reprovado
     if($float < 8 || $frequenciaFaltas > 20) {
