@@ -1,19 +1,25 @@
 <?php
+    // Declarando variáveis para conexão com o banco de dados
     $host = 'localhost';
     $dbname = 'desafio5';
     $user = 'root';
     $password = '';
 
+    // Começando a validação do formulário HTML
     if(isset($_POST['submit'])) {
+        // Fazendo conexão com banco de dados
         $conn = new mysqli($host, $user, $password, $dbname);
 
+        // Declarando variáveis com método $_POST
         $fullname = $_POST['fullname'];
         $birthdate = $_POST['birthdate'];
         $email = $_POST['email'];
         $pass1 = $_POST['pass1'];
         $pass2 = $_POST['pass2'];
 
+        // Conferindo se as senhas são iguais
         if($pass1 === $pass2) {
+            // Fazendo o "Query"
             $sql = "
                 INSERT INTO
                     users (`name`,`password`,`email`,`birthdate`)
@@ -21,13 +27,17 @@
                     ('$fullname','$pass1','$email','$birthdate')
             ";
 
+            // Fazendo a verificação se os dados foram inseridos com sucesso
             if($conn->query($sql) === TRUE) {
                 echo 'Dados salvos com sucesso!';
             } else {
                 echo 'Erro!' . $sql . '<br>' .$conn->error;
             }
+        } else {
+            echo 'Ambas as senhas devem ser iguais';
         }
 
+        // Fechando a conexão com o banco de dados
         $conn->close();
     }
 ?>
