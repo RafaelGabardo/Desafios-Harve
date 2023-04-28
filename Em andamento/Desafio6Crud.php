@@ -1,4 +1,7 @@
 <?php
+    // Estou com dificuldade em saber onde está o erro nesse código. Tento fazer as atualizações mas parece que não conecta no banco de dados,
+    // porém não aparece mensagem de erro
+
     // Declarando a classe
     class Crud
     {
