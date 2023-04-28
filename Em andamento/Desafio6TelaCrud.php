@@ -1,6 +1,9 @@
 <?php
-    // Incluindo um arquivo no outro para fazer tudo funcionar direito
-    include_once('Desafio6Crud.php');
+    // Incluindo os arquivos abaixo para executarem suas funções
+    include_once('Desafio6CrudConnection.php'); 
+    include_once('Desafio6CrudDelete.php');
+    include_once('Desafio6CrudSelect.php');
+    include_once('Desafio6CrudUpdate.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
